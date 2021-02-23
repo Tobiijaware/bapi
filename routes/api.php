@@ -51,5 +51,10 @@ Route::group(['middleware' => 'api',
         Route::get('/getuserinvestment', 'UserInvestmentController@showuserinvestment');
         Route::post('/investfromwallet', 'UserInvestmentController@Investmentfromwallet');
 
-        
+        //Savings Routes
+        Route::get('/getsavings', 'SavingsUserController@index');
+        Route::get('/getusersavings', 'SavingsUserController@allusersavings');
+        Route::post('/deleteusersavings', 'SavingsUserController@deletesavings');
+        Route::post('/updatesavings', 'SavingsUserController@updatesavings');
+        Route::post('/usersubmitsavings', 'SavingsUserController@submitsavings');
 });
