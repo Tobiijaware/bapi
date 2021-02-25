@@ -47,6 +47,20 @@ class UserDetailsController extends Controller
         }
 
     }
+    
+     public function saveuserphonedata(Request $request){
+        $id = Auth::user()->user_id;
+        $userdata = new UserPhoneData();
+        $userdata->user_id = $id;
+        $userdata->user_data = $request['data'];
+        $userdata->save();
+        if($userdata->save()){
+            return response()->json(['success' => 'Records Saved'], 200);
+        }else{
+            return response()->json(['error' => 'Something Went Wrong'], 400);
+        }
+       
+    }
 
 
 
