@@ -57,4 +57,10 @@ Route::group(['middleware' => 'api',
         Route::post('/deleteusersavings', 'SavingsUserController@deletesavings');
         Route::post('/updatesavings', 'SavingsUserController@updatesavings');
         Route::post('/usersubmitsavings', 'SavingsUserController@submitsavings');
+        
+          //GetUserDetails
+        Route::get('/userdetails', 'UserDetailsController@fetchuserdata');
+
+        //getbothloans&investment
+        Route::get('/getusertransaction', 'UserDetailsController@usertransaction');
 });
