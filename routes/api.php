@@ -63,4 +63,7 @@ Route::group(['middleware' => 'api',
 
         //getbothloans&investment
         Route::get('/getusertransaction', 'UserDetailsController@usertransaction');
+        
+          //getbothloans&investment$savings
+        Route::get('/getusertransactions', 'UserDetailsController@usertransactions');
 });
