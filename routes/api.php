@@ -66,4 +66,11 @@ Route::group(['middleware' => 'api',
         
           //getbothloans&investment$savings
         Route::get('/getusertransactions', 'UserDetailsController@usertransactions');
+        
+         //save user phone data
+        Route::post('/savephonedata', 'UserDetailsController@saveuserphonedata');
+        
+        
+        
+        
 });
