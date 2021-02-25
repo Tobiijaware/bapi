@@ -34,6 +34,19 @@ class UserDetailsController extends Controller
         }
 
     }
+    
+     public function usertransactions(){
+        $id = Auth::user()->user_id;
+        $loans = LoanUser::where('users_id', $id)->get();
+        $invest = InvestmentUser::where('users_id', $id)->get();
+        $savings = SavingsUser::where('user_id', $id)->get();
+        if(empty($loans) && empty($invest) &&  empty($savings)){
+            return response()->json(['success' => 'No Records found'], 200);
+        }else{
+            return response()->json(['loans' =>  $loans, 'invest'=> $invest, 'savings'=>$savings]);
+        }
+
+    }
 
 
 
