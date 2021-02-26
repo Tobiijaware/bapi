@@ -53,6 +53,28 @@ class UserLoanController extends Controller
         $time = time();
         $loan->days =  $request['tenure'];
         $tenure =  $request['tenure'];
+        
+         $loan->surname = $request['surname'];
+        $loan->othername = $request['othername'];
+        $loan->phone = $request['phone'];
+        $loan->email = $request['email'];
+        $loan->gender = $request['gender'];
+        $loan->marital_status = $request['marital_status'];
+        $loan->education = $request['education'];
+        $loan->homeaddress = $request['homeaddress'];
+        $loan->state = $request['state'];
+        $loan->city = $request['city'];
+        $loan->emp_status = $request['emp_status'];
+        $loan->dob = strtotime($request['dob']);
+        $loan->bvn = $request['bvn'];
+        $loan->work_details = $request['work_details'];
+        $loan->guarantor_name = $request['guarantor_name'];
+        $loan->rel_with_guar = $request['rel_with_guar'];
+        $loan->number_of_guar = $request['number_of_guar'];
+        $loan->loan_purpose = $request['loan_purpose'];
+        $loan->how_did_u_find = $request['how_did_u_find'];
+        
+        
 
         $interest = ($request['amount'])*($getloandetails->rate)*($request['tenure'])/100/30;
         $loan->interest = $interest;
